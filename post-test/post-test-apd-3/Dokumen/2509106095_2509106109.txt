@@ -1,0 +1,24 @@
+print("=== Pembelian tiket konser Albert dan Navtaly ===")
+print("1. Tiket biasa - Rp 50,000")
+print("2. Tiket VIP    - Rp 100,000")
+
+n = int(input("Berapa banyak tiket yang ingin anda beli? "))
+
+total_harga = 0
+
+for i in range(n):
+    print(f"\nTiket {i+1}")
+    pilihan = input("Pilih kategori tiket (1/2): ")
+
+    if pilihan == "1":
+        print("Pilih kategori tiket (Rp 50,000)")
+        total_harga += 50000
+    elif pilihan == "2":
+        print("Pilih kategori tiket (Rp 100,000)")
+        total_harga += 100000
+    else:
+        print("Pilihan tidak valid, tiket ini dilewati.")
+
+print("\n=== Ringkasan Pembelian ===")
+print(f"Total pembelian tiket: {n}")
+print(f"Total harga: Rp {total_harga}")

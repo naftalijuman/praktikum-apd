@@ -1,60 +1,79 @@
-# ====== Data Login ======
-nama_asli = "Navtaly"
-nis_asli = "12345"
+nama1 = "Akbar Pratama"
+nim1 = "2509106091"
+Percobaan = 0
 
-# ====== Login ======
-print("=== LOGIN APLIKASI STREAMING MUSIK ===")
-nama = input("Masukkan Nama: ")
-nis = input("Masukkan NIS: ")
-
-# Periksa login persis
-if nama == nama_asli and nis == nis_asli:
-    print("\nLogin berhasil!\n")
-
-    # ====== Menu Paket ======
-    print("=== PILIHAN PAKET LANGGANAN ===")
-    print("1. Bronze   - Rp 50.000")
-    print("2. Silver   - Rp 100.000")
-    print("3. Gold     - Rp 150.000")
-    print("4. Platinum - Rp 200.000")
-
-    pilihan = input("Pilih paket (1-4): ")
-
-    # Hitung total dan output
-    if pilihan == "1":
-        harga = 50000
-        admin = 0.01
-        fitur = "Akses dasar ke lagu-lagu populer"
-        paket = "Bronze"
-    elif pilihan == "2":
-        harga = 100000
-        admin = 0.03
-        fitur = "Akses lagu premium dan playlist kustom"
-        paket = "Silver"
-    elif pilihan == "3":
-        harga = 150000
-        admin = 0.05
-        fitur = "Akses lagu premium, playlist kustom, dan mode offline"
-        paket = "Gold"
-    elif pilihan == "4":
-        harga = 200000
-        admin = 0.07
-        fitur = "Semua fitur, playlist kustom, mode offline, konten eksklusif artis"
-        paket = "Platinum"
+while Percobaan < 3:
+    print("== Login ==")
+    Username = input("Masukkan Username: ")
+    Password = input("Masukkan Password: ")
+    
+    if Username == nama1 and Password == nim1:
+        print("Login Berhasil ")
+        break
     else:
-        print("\nPilihan paket tidak valid!")
-        exit()
+        Percobaan += 1
+        sisa = 3 - Percobaan
+        print("Login Gagal. Sisa percobaan:", sisa)
 
-    total = harga + (harga * admin)
-
-    print("\n=== RINCIAN PEMBAYARAN ===")
-    print("Paket        :", paket)
-    print("Harga Paket  : Rp", harga)
-    print("Biaya Admin  :", int(admin*100), "%")
-    print("Total Bayar  : Rp", int(total))
-    print("Keuntungan   :", fitur)
-    print("\nTerima kasih telah berlangganan di aplikasi kami!")
+if Percobaan == 3:
+    print("Program Selesai")
 
 else:
-    print("\nLogin gagal! Nama atau NIS salah.")
-    print("Anda tidak dapat mengakses menu pembayaran.")
+    while True:
+        print("\n== Menu Ticket ==")
+        print("1. Tiket Reguler : Rp 50.000")
+        print("2. Tiket VIP     : Rp 100.000") 
+        print("3. Tiket VVIP    : Rp 150.000")
+        print("4. Keluar")
+        Pilihan = input("Pilihan Ticket [1-4]: ")
+
+        if Pilihan == "4":
+            print("Terima kasih, program selesai.")
+            break
+
+        if Pilihan == "1":
+            Ticket = "Reguler"
+            Harga = 50000
+        elif Pilihan == "2":
+            Ticket = "VIP"
+            Harga = 100000
+        elif Pilihan == "3":
+            Ticket = "VVIP"
+            Harga = 150000
+        else:
+            print("Pilihan tidak ada! Silakan pilih 1-4.")
+            continue 
+
+        JumlahTicket = input("Masukkan Jumlah Tiket: ")
+        if not JumlahTicket.isdigit():
+            print("Masukkan Angka Saja")
+            continue
+        jumlah = int(JumlahTicket)
+        total = 0
+
+        for A in range(jumlah):
+            total += Harga
+
+        if total >= 300000:
+            potongan = total * 0.12
+            totalAkhir = total - potongan
+            diskon = "Diskon sebesar 12%"
+        elif total >= 200000:
+            potongan = total * 0.08
+            totalAkhir = total - potongan
+            diskon = "Diskon sebesar 8%"
+        elif total >= 150000:
+            potongan = 0
+            totalAkhir = total
+            diskon = "Poster Film Ekslusif"
+        else:
+            potongan = 0
+            totalAkhir = total
+            diskon = "Tidak dapat apa-apa"
+
+        print("== Hasil Pembelian ==")
+        print("Pilihan Ticket :", Ticket)
+        print("Jumlah Ticket  :", jumlah)
+        print("Total Bayar    : Rp", total)
+        print("Total Akhir    : Rp", int(totalAkhir))
+        print("Mendapatkan    :", diskon)
