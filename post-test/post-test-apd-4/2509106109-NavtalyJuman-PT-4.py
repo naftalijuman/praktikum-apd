@@ -51,7 +51,7 @@ while True:
         print("Pilahan tidak ada! Silahakan pilih 1-4.")
         continue
 
-    JumlahTicket = input("Masukkan Jumlah TiCket : ")
+    JumlahTicket = input("Masukkan Jumlah Ticket : ")
     if not JumlahTicket:
         print("Masukkan Angka Saja")
         continue
