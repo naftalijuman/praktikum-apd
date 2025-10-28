@@ -56,7 +56,7 @@ while True:
                     print("2. Tambah Deck")
                     print("3. Ubah Deck")
                     print("4. Hapus Deck")
-                    print("5. Logout")
+                    print("5. Kembali ke Menu Utama")
                     pilih_admin = input("Pilih menu: ")
                     if pilih_admin == "1":
                         if len(decks) == 0:
@@ -123,7 +123,7 @@ while True:
                 while True:
                     print("=== MENU USER ===")
                     print("1. Lihat Semua Deck")
-                    print("2. Logout")
+                    print("2. Kembali ke Menu Utama")
                     pilih_user = input("Pilih menu: ")
 
                     if pilih_user == "1":
