@@ -145,9 +145,10 @@
 # finally :
 #     print('Blok Try Selesai')
 
-try:
-    usn = input('Username yang diinginkan : ')
-    if len(usn) < 5:
-        raise ValueError('Nama Minimal Memiliki 5 karakter')
-except ValueError as e:
-    print(e)
+# try:
+#     usn = input('Username yang diinginkan : ')
+#     if len(usn) < 5:
+#         raise ValueError('Nama Minimal Memiliki 5 karakter')
+    
+# except ValueError as e:
+#     print(e)
